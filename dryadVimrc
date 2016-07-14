@@ -14,7 +14,6 @@ set hlsearch
 set incsearch
 set title
 set pastetoggle=<F2>
-"source $VIMRUNTIME/vimrc_example.vim
 set tabstop=4
 set expandtab
 set modifiable
@@ -32,6 +31,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
+Plugin 'mileszs/ack.vim'
 
 "markdown
 Plugin 'plasticboy/vim-markdown'
@@ -41,3 +41,7 @@ Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
